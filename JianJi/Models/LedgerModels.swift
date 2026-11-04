@@ -90,6 +90,10 @@ struct LedgerCategory: Identifiable, Codable, Hashable {
     ]
 }
 
+enum LedgerAccounts {
+    static let all = ["现金", "银行卡", "支付宝", "微信"]
+}
+
 enum AppearanceOption: String, Codable, CaseIterable, Identifiable {
     case system
     case light
