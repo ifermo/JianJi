@@ -39,6 +39,17 @@
                ReferencedContainer = "container:JianJi.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE0000000000000000000003"
+               BuildableName = "JianJiUITests.xctest"
+               BlueprintName = "JianJiUITests"
+               ReferencedContainer = "container:JianJi.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

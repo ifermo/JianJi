@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		B00000000000000000000001 /* JianJi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JianJi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00000000000000000000002 /* JianJiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JianJiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00000000000000000000003 /* JianJiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JianJiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -20,6 +21,11 @@
 		AC0000000000000000000009 /* JianJiTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = JianJiTests;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000011 /* JianJiUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JianJiUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -39,6 +45,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF0000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -47,6 +60,7 @@
 			children = (
 				AC0000000000000000000002 /* JianJi */,
 				AC0000000000000000000009 /* JianJiTests */,
+				AC0000000000000000000011 /* JianJiUITests */,
 				AC0000000000000000000010 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +70,7 @@
 			children = (
 				B00000000000000000000001 /* JianJi.app */,
 				B00000000000000000000002 /* JianJiTests.xctest */,
+				B00000000000000000000003 /* JianJiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +119,26 @@
 			productReference = B00000000000000000000002 /* JianJiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AE0000000000000000000003 /* JianJiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD0000000000000000000012 /* Build configuration list for PBXNativeTarget "JianJiUITests" */;
+			buildPhases = (
+				AF0000000000000000000007 /* Sources */,
+				AF0000000000000000000008 /* Frameworks */,
+				AF0000000000000000000009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AC0000000000000000000011 /* JianJiUITests */,
+			);
+			name = JianJiUITests;
+			productName = JianJiUITests;
+			productReference = B00000000000000000000003 /* JianJiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -120,6 +155,9 @@
 					AE0000000000000000000002 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = AE0000000000000000000001;
+					};
+					AE0000000000000000000003 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -141,6 +179,7 @@
 			targets = (
 				AE0000000000000000000001 /* JianJi */,
 				AE0000000000000000000002 /* JianJiTests */,
+				AE0000000000000000000003 /* JianJiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF0000000000000000000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -171,6 +217,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AF0000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0000000000000000000007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,6 +408,36 @@
 			};
 			name = Release;
 		};
+		AD0000000000000000000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = JianJi;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = JianJi;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,6 +464,15 @@
 			buildConfigurations = (
 				AD0000000000000000000005 /* Debug */,
 				AD0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD0000000000000000000012 /* Build configuration list for PBXNativeTarget "JianJiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000010 /* Debug */,
+				AD0000000000000000000011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
