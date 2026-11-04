@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT: JianJi.xcodeproj
+  SCHEME: JianJi
+  PREFERRED_SIMULATOR: iPhone 18 Pro
+
+jobs:
+  test:
+    name: Build & test (iOS Simulator)
+    runs-on: macos-latest
+    timeout-minutes: 45
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 如 runner 默认 Xcode 不满足工程要求,可在此固定版本,例如:
+      #   sudo xcode-select -s /Applications/Xcode_16.4.app
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          sw_vers
+
+      - name: Resolve simulator destination
+        run: |
+          AVAILABLE=$(xcrun simctl list devices available \
+            | grep -oE 'iPhone [^(]+' \
+            | sed 's/[[:space:]]*$//' \
+            | sort -u)
+          SIM_NAME=$(echo "$AVAILABLE" | grep -Fx "$PREFERRED_SIMULATOR" || true)
+          if [ -z "$SIM_NAME" ]; then
+            SIM_NAME=$(echo "$AVAILABLE" | head -n 1)
+          fi
+          if [ -z "$SIM_NAME" ]; then
+            echo "::error::No available iPhone simulator on this runner"
+            exit 1
+          fi
+          echo "SIM_NAME=$SIM_NAME" >> "$GITHUB_ENV"
+          echo "Using simulator: $SIM_NAME"
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "platform=iOS Simulator,name=$SIM_NAME"
+
+      - name: Test
+        run: |
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "platform=iOS Simulator,name=$SIM_NAME" \
+            -resultBundlePath TestResults.xcresult
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ github.run_id }}
+          path: TestResults.xcresult
+          if-no-files-found: ignore
+          retention-days: 7

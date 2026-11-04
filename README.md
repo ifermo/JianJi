@@ -2,6 +2,8 @@
 
 [简体中文](README.zh-CN.md) | English
 
+![CI](https://github.com/ifermo/JianJi/actions/workflows/ci.yml/badge.svg?branch=main)
+
 > An iOS personal ledger that compresses bookkeeping into "a few seconds": tap to calculate, hold to speak, local-first data.
 
 <table>

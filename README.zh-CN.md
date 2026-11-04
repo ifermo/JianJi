@@ -2,6 +2,8 @@
 
 简体中文 | [English](README.md)
 
+![CI](https://github.com/ifermo/JianJi/actions/workflows/ci.yml/badge.svg?branch=main)
+
 > 一款把记账压缩到「几秒钟」的 iOS 个人账本:点按即算、长按即说、数据本地优先。
 
 <table>
