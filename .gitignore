@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Xcode 用户状态(不共享的个人界面数据)
+xcuserdata/
+*.xcuserstate
+
+# Xcode 构建产物
+build/
+DerivedData/
+
+# 本地工具数据
+.workbuddy/
