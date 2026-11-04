@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB0000000000000000000001 /* JianJiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* JianJiApp.swift */; };
+		AB0000000000000000000002 /* LedgerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* LedgerModels.swift */; };
+		AB0000000000000000000003 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* AppStore.swift */; };
+		AB0000000000000000000004 /* BiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* BiometricAuthService.swift */; };
+		AB0000000000000000000005 /* CloudKitSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* CloudKitSyncService.swift */; };
+		AB0000000000000000000006 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000006 /* ExportService.swift */; };
+		AB0000000000000000000007 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000007 /* PersistenceService.swift */; };
+		AB0000000000000000000008 /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* CalculatorEngine.swift */; };
+		AB0000000000000000000009 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000009 /* DesignSystem.swift */; };
+		AB0000000000000000000010 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000010 /* Formatters.swift */; };
+		AB0000000000000000000011 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000011 /* AddTransactionView.swift */; };
+		AB0000000000000000000012 /* BillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* BillsView.swift */; };
+		AB0000000000000000000013 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* HomeView.swift */; };
+		AB0000000000000000000014 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000014 /* ProfileView.swift */; };
+		AB0000000000000000000015 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000015 /* RootView.swift */; };
+		AB0000000000000000000016 /* SettingsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000016 /* SettingsViews.swift */; };
+		AB0000000000000000000017 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* StatisticsView.swift */; };
+		AB0000000000000000000018 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* TransactionDetailView.swift */; };
+		AB0000000000000000000019 /* JianJiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* JianJiTests.swift */; };
+		AB0000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10000000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE0000000000000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE0000000000000000000001;
+			remoteInfo = JianJi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA0000000000000000000001 /* JianJiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JianJiApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000002 /* LedgerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerModels.swift; sourceTree = "<group>"; };
+		AA0000000000000000000003 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000004 /* BiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000005 /* CloudKitSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000006 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000007 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000008 /* CalculatorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
+		AA0000000000000000000009 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		AA0000000000000000000010 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		AA0000000000000000000011 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000012 /* BillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000013 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000014 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000015 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000016 /* SettingsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViews.swift; sourceTree = "<group>"; };
+		AA0000000000000000000017 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000018 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000019 /* JianJiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JianJiTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA0000000000000000000021 /* JianJi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = JianJi.entitlements; sourceTree = "<group>"; };
+		B00000000000000000000001 /* JianJi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JianJi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00000000000000000000002 /* JianJiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JianJiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF0000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC0000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				AC0000000000000000000002 /* JianJi */,
+				AC0000000000000000000009 /* JianJiTests */,
+				AC0000000000000000000010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000002 /* JianJi */ = {
+			isa = PBXGroup;
+			children = (
+				AC0000000000000000000003 /* App */,
+				AC0000000000000000000004 /* Models */,
+				AC0000000000000000000005 /* Services */,
+				AC0000000000000000000006 /* Utilities */,
+				AC0000000000000000000007 /* Views */,
+				AC0000000000000000000008 /* Resources */,
+				AA0000000000000000000021 /* JianJi.entitlements */,
+			);
+			path = JianJi;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000001 /* JianJiApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000002 /* LedgerModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000003 /* AppStore.swift */,
+				AA0000000000000000000004 /* BiometricAuthService.swift */,
+				AA0000000000000000000005 /* CloudKitSyncService.swift */,
+				AA0000000000000000000006 /* ExportService.swift */,
+				AA0000000000000000000007 /* PersistenceService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000006 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000008 /* CalculatorEngine.swift */,
+				AA0000000000000000000009 /* DesignSystem.swift */,
+				AA0000000000000000000010 /* Formatters.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000011 /* AddTransactionView.swift */,
+				AA0000000000000000000012 /* BillsView.swift */,
+				AA0000000000000000000013 /* HomeView.swift */,
+				AA0000000000000000000014 /* ProfileView.swift */,
+				AA0000000000000000000015 /* RootView.swift */,
+				AA0000000000000000000016 /* SettingsViews.swift */,
+				AA0000000000000000000017 /* StatisticsView.swift */,
+				AA0000000000000000000018 /* TransactionDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000008 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000020 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000009 /* JianJiTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000019 /* JianJiTests.swift */,
+			);
+			path = JianJiTests;
+			sourceTree = "<group>";
+		};
+		AC0000000000000000000010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00000000000000000000001 /* JianJi.app */,
+				B00000000000000000000002 /* JianJiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE0000000000000000000001 /* JianJi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD0000000000000000000008 /* Build configuration list for PBXNativeTarget "JianJi" */;
+			buildPhases = (
+				AF0000000000000000000001 /* Sources */,
+				AF0000000000000000000002 /* Frameworks */,
+				AF0000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JianJi;
+			productName = JianJi;
+			productReference = B00000000000000000000001 /* JianJi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE0000000000000000000002 /* JianJiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD0000000000000000000009 /* Build configuration list for PBXNativeTarget "JianJiTests" */;
+			buildPhases = (
+				AF0000000000000000000004 /* Sources */,
+				AF0000000000000000000005 /* Frameworks */,
+				AF0000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B10000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = JianJiTests;
+			productName = JianJiTests;
+			productReference = B00000000000000000000002 /* JianJiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE0000000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AE0000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					AE0000000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AE0000000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = AD0000000000000000000007 /* Build configuration list for PBXProject "JianJi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = AC0000000000000000000001;
+			productRefGroup = AC0000000000000000000010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE0000000000000000000001 /* JianJi */,
+				AE0000000000000000000002 /* JianJiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF0000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0000000000000000000020 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0000000000000000000001 /* JianJiApp.swift in Sources */,
+				AB0000000000000000000002 /* LedgerModels.swift in Sources */,
+				AB0000000000000000000003 /* AppStore.swift in Sources */,
+				AB0000000000000000000004 /* BiometricAuthService.swift in Sources */,
+				AB0000000000000000000005 /* CloudKitSyncService.swift in Sources */,
+				AB0000000000000000000006 /* ExportService.swift in Sources */,
+				AB0000000000000000000007 /* PersistenceService.swift in Sources */,
+				AB0000000000000000000008 /* CalculatorEngine.swift in Sources */,
+				AB0000000000000000000009 /* DesignSystem.swift in Sources */,
+				AB0000000000000000000010 /* Formatters.swift in Sources */,
+				AB0000000000000000000011 /* AddTransactionView.swift in Sources */,
+				AB0000000000000000000012 /* BillsView.swift in Sources */,
+				AB0000000000000000000013 /* HomeView.swift in Sources */,
+				AB0000000000000000000014 /* ProfileView.swift in Sources */,
+				AB0000000000000000000015 /* RootView.swift in Sources */,
+				AB0000000000000000000016 /* SettingsViews.swift in Sources */,
+				AB0000000000000000000017 /* StatisticsView.swift in Sources */,
+				AB0000000000000000000018 /* TransactionDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF0000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0000000000000000000019 /* JianJiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B10000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE0000000000000000000001 /* JianJi */;
+			targetProxy = B10000000000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "简记";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁简记并保护你的账单隐私";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AD0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "简记";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "用于解锁简记并保护你的账单隐私";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arm64;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AD0000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JianJi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JianJi";
+			};
+			name = Debug;
+		};
+		AD0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WF6N8NFCQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.JianJiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JianJi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JianJi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD0000000000000000000007 /* Build configuration list for PBXProject "JianJi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000001 /* Debug */,
+				AD0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD0000000000000000000008 /* Build configuration list for PBXNativeTarget "JianJi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000003 /* Debug */,
+				AD0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD0000000000000000000009 /* Build configuration list for PBXNativeTarget "JianJiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0000000000000000000005 /* Debug */,
+				AD0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE0000000000000000000000 /* Project object */;
+}
