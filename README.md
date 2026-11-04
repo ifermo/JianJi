@@ -12,6 +12,9 @@
     <td align="center"><img src="docs/screenshots/04-profile.png" width="180"><br><b>Profile</b></td>
     <td align="center"><img src="docs/screenshots/05-add-transaction.png" width="180"><br><b>New Entry</b></td>
   </tr>
+  <tr>
+    <td align="center" colspan="5"><img src="docs/screenshots/06-voice-listening.png" width="180"> <img src="docs/screenshots/07-voice-confirm.png" width="180"><br><b>Voice entry · Hold to talk → Confirm to save</b></td>
+  </tr>
 </table>
 
 ## Features
@@ -23,7 +26,7 @@
 - **Export**: CSV (UTF-8 BOM) or Excel XML, shared via the system share sheet
 - **Privacy**: Face ID unlock with auto-lock on backgrounding; the ledger file lives on-device first
 - **iCloud sync**: CloudKit private database (in progress)
-- **Voice entry**: hold-to-talk → Chinese number & bill semantics parsing → confirm to save. The recognition state machine and parser are done and unit-tested; wiring into the home entry button is in progress
+- **Voice entry**: hold the center button to talk → live transcription → Chinese number & bill semantics parsing → confirm to save. Release to finish, swipe up to cancel; a short tap still opens the keyboard entry. Backed by a unit-tested hold-to-talk state machine and parser
 
 ## Tech Stack
 

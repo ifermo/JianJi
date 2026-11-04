@@ -33,6 +33,23 @@ final class ScreenshotTests: XCTestCase {
         app.buttons["完成"].tap()
     }
 
+    /// 语音链路截图:通过 DEBUG 启动参数呈现浮层与确认单,不依赖麦克风。
+    @MainActor
+    func testCaptureVoiceScreens() throws {
+        app.launchArguments = ["-VoiceDemoOverlay"]
+        app.launch()
+        XCTAssertTrue(app.staticTexts["正在聆听"].waitForExistence(timeout: 20)
+            || app.buttons["取消"].waitForExistence(timeout: 5), "语音浮层未出现")
+        settle()
+        capture("06-voice-listening")
+
+        app.launchArguments = ["-VoiceDemoConfirm"]
+        app.launch()
+        XCTAssertTrue(app.buttons["确认入账"].waitForExistence(timeout: 20), "语音确认单未出现")
+        settle()
+        capture("07-voice-confirm")
+    }
+
     private func tapTab(_ label: String) {
         app.buttons[label].tap()
         settle()

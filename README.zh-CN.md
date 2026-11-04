@@ -12,6 +12,9 @@
     <td align="center"><img src="docs/screenshots/04-profile.png" width="180"><br><b>我的</b></td>
     <td align="center"><img src="docs/screenshots/05-add-transaction.png" width="180"><br><b>记一笔</b></td>
   </tr>
+  <tr>
+    <td align="center" colspan="5"><img src="docs/screenshots/06-voice-listening.png" width="180"> <img src="docs/screenshots/07-voice-confirm.png" width="180"><br><b>语音记账 · 按住说话 → 确认入账</b></td>
+  </tr>
 </table>
 
 ## 特性
@@ -23,7 +26,7 @@
 - **导出**:CSV(带 UTF-8 标记)或 Excel XML,经系统分享面板分发
 - **隐私**:Face ID 解锁、切后台自动上锁;账本文件优先存储于本地
 - **iCloud 同步**:基于 CloudKit 私有数据库(开发中)
-- **语音记账**:按住说话 → 中文数字与账单语义解析 → 确认入账。识别状态机与解析器已完成并通过单元测试,正在接入首页入口(开发中)
+- **语音记账**:长按首页中央按钮即说,实时转写 → 中文数字与账单语义解析 → 确认入账;松手结束、上滑取消,点按仍是键盘记账。状态机与解析器均有单元测试
 
 ## 技术栈
 

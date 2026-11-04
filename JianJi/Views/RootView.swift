@@ -11,6 +11,11 @@ struct RootView: View {
     @EnvironmentObject private var store: AppStore
     @State private var selectedTab: AppTab = .home
     @State private var isAdding = false
+    @StateObject private var voice = VoiceEntryModel()
+    #if DEBUG
+    @State private var isDemoOverlay = false
+    @State private var isDemoConfirm = false
+    #endif
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -24,9 +29,13 @@ struct RootView: View {
             .toolbar(.hidden, for: .tabBar)
             .background(Palette.background)
 
-            CustomTabBar(selection: $selectedTab, add: { isAdding = true })
+            CustomTabBar(selection: $selectedTab, voice: voice)
         }
         .tint(Palette.primary)
+        .onAppear(perform: prepareVoiceEntry)
+        .onChange(of: store.categories) { _, categories in
+            voice.configure(categories: categories, accounts: LedgerAccounts.all)
+        }
         .sheet(isPresented: $isAdding) {
             AddTransactionView()
                 .environmentObject(store)
@@ -34,6 +43,23 @@ struct RootView: View {
                 .presentationDragIndicator(.hidden)
                 .presentationBackground(Palette.background)
         }
+        .sheet(isPresented: reviewPresented) {
+            reviewContent
+        }
+        .overlay {
+            #if DEBUG
+            if isDemoOverlay {
+                VoiceCaptureOverlay(state: Self.demoOverlayState)
+            } else if voice.overlayVisible {
+                liveVoiceOverlay
+            }
+            #else
+            if voice.overlayVisible {
+                liveVoiceOverlay
+            }
+            #endif
+        }
+        .animation(.easeOut(duration: 0.18), value: voice.overlayVisible)
         .overlay(alignment: .bottom) {
             if let message = store.toastMessage {
                 Text(message)
@@ -58,11 +84,117 @@ struct RootView: View {
             Text(store.errorMessage ?? "")
         }
     }
+
+    private func prepareVoiceEntry() {
+        voice.onManual = { isAdding = true }
+        voice.configure(categories: store.categories, accounts: LedgerAccounts.all)
+        #if DEBUG
+        let arguments = ProcessInfo.processInfo.arguments
+        isDemoOverlay = arguments.contains("-VoiceDemoOverlay")
+        isDemoConfirm = arguments.contains("-VoiceDemoConfirm")
+        #endif
+    }
+
+    // MARK: - 语音确认单
+
+    private var liveVoiceOverlay: some View {
+        VoiceCaptureOverlay(
+            state: voice.overlayState,
+            onFinish: { voice.pressEnded() },
+            onCancel: { voice.cancel() }
+        )
+    }
+
+    private var reviewPresented: Binding<Bool> {
+        Binding(
+            get: {
+                #if DEBUG
+                if isDemoConfirm { return true }
+                #endif
+                return voice.phase == .reviewing && voice.draft != nil
+            },
+            set: { presented in
+                guard !presented else { return }
+                #if DEBUG
+                isDemoConfirm = false
+                #endif
+                voice.reset()
+            }
+        )
+    }
+
+    @ViewBuilder private var reviewContent: some View {
+        #if DEBUG
+        if isDemoConfirm {
+            VoiceConfirmSheet(
+                draft: Self.demoDraft,
+                categories: store.categories,
+                accounts: LedgerAccounts.all,
+                defaultAccount: "微信",
+                onSave: { _ in isDemoConfirm = false },
+                onRetry: { isDemoConfirm = false },
+                onUseKeyboard: { isDemoConfirm = false }
+            )
+        } else {
+            liveReviewContent
+        }
+        #else
+        liveReviewContent
+        #endif
+    }
+
+    @ViewBuilder private var liveReviewContent: some View {
+        if let draft = voice.draft {
+            VoiceConfirmSheet(
+                draft: draft,
+                categories: store.categories,
+                accounts: LedgerAccounts.all,
+                defaultAccount: draft.account,
+                onSave: { transaction in
+                    try store.add(transaction)
+                    voice.reset()
+                },
+                onRetry: { voice.reset() },
+                onUseKeyboard: {
+                    voice.reset()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        isAdding = true
+                    }
+                }
+            )
+        }
+    }
+
+    #if DEBUG
+    /// UI 测试截图夹具:不经过麦克风直接呈现语音链路的关键界面。
+    private static let demoOverlayState = VoiceOverlayState(
+        phase: .listening,
+        transcript: "昨天午饭花了四十二元,用微信支付的",
+        level: 0.72,
+        elapsed: 4.2,
+        cancelArmed: false,
+        isHandsFree: false
+    )
+
+    private static let demoDraft = VoiceDraft(
+        type: .expense,
+        amount: 42,
+        categoryID: "food",
+        date: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date(),
+        account: "微信",
+        merchant: "午饭",
+        note: "昨天午饭花了四十二元,用微信支付的",
+        warnings: [],
+        highlights: ["四十二元", "昨天", "午饭", "微信支付"],
+        confirmationRequested: false
+    )
+    #endif
 }
 
 private struct CustomTabBar: View {
     @Binding var selection: AppTab
-    let add: () -> Void
+    @ObservedObject var voice: VoiceEntryModel
+    @State private var isEntryDown = false
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
@@ -81,18 +213,45 @@ private struct CustomTabBar: View {
             Rectangle().fill(Palette.border).frame(height: 0.5)
         }
         .overlay(alignment: .top) {
-            Button(action: add) {
-                Image(systemName: "plus")
-                    .font(.system(size: 27, weight: .light))
-                    .foregroundStyle(Palette.onPrimary)
-                    .frame(width: 56, height: 56)
-                    .background(Palette.primary)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Palette.background, lineWidth: 4.6))
-            }
-            .offset(y: -26.5)
-            .accessibilityLabel("记一笔")
+            entryButton
         }
+    }
+
+    /// 中央入口:点按 → 键盘记账;按住 → 语音记账(上滑取消)。
+    private var entryButton: some View {
+        Image(systemName: "plus")
+            .font(.system(size: 27, weight: .light))
+            .foregroundStyle(Palette.onPrimary)
+            .frame(width: 56, height: 56)
+            .background(Palette.primary)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Palette.background, lineWidth: 4.6))
+            .scaleEffect(voice.isPressing ? 0.92 : 1)
+            .animation(.easeOut(duration: 0.15), value: voice.isPressing)
+            .offset(y: -26.5)
+            .contentShape(Circle())
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        if !isEntryDown {
+                            isEntryDown = true
+                            voice.pressBegan()
+                        }
+                        voice.pressMoved(value.translation)
+                    }
+                    .onEnded { _ in
+                        isEntryDown = false
+                        voice.pressEnded()
+                    }
+            )
+            .accessibilityLabel("记一笔")
+            .accessibilityHint("点按使用键盘记账,按住说话进行语音记账")
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction(.default) {
+                // VoiceOver 双击:立即松手,走键盘记账路径
+                voice.pressBegan()
+                voice.pressEnded()
+            }
     }
 
     private func tabButton(_ tab: AppTab, title: String, symbol: String) -> some View {

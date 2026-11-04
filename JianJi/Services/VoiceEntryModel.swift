@@ -26,7 +26,7 @@ final class VoiceEntryModel: ObservableObject {
     let service = VoiceRecognitionService()
 
     var categories: [LedgerCategory] = LedgerCategory.defaults
-    var accounts: [String] = ["现金", "银行卡", "支付宝", "微信"]
+    var accounts: [String] = LedgerAccounts.all
     var onManual: (() -> Void)?
 
     func configure(categories: [LedgerCategory], accounts: [String]) {
